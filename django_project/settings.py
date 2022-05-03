@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'True' == os.environ.getsize('DEBUG_VALUE')
 
 ALLOWED_HOSTS = ['mynewdjagoblog.herokuapp.com']
 
@@ -21,9 +21,9 @@ ALLOWED_HOSTS = ['mynewdjagoblog.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'crispy_forms', # New
-    'users.apps.UsersConfig', # New
-    'blog.apps.BlogConfig', # New
+    'crispy_forms',
+    'users.apps.UsersConfig',
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
